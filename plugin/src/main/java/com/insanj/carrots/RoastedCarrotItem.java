@@ -69,38 +69,30 @@ public class RoastedCarrotItem extends Item {
 
 	@Override
 	public ItemStack onItemFinishedUsing(ItemStack stack, World world, LivingEntity entity) {
-		try {
-			// 1 water breathing effect
-			StatusEffectInstance waterBreathing = new StatusEffectInstance(StatusEffect.byRawId(13), 80, 50, true, false); // time in ticks?
-			entity.addPotionEffect(waterBreathing);
+		if (!world.isClient) {
+			try {
+				// 1 water breathing effect
+				StatusEffectInstance waterBreathing = new StatusEffectInstance(StatusEffect.byRawId(13), 80, 50, true, false); // time in ticks?
+				entity.addPotionEffect(waterBreathing);
 
-			// 2 night vision effect
-			StatusEffectInstance nightVision = new StatusEffectInstance(StatusEffect.byRawId(16), 80, 50, true, false);
-			entity.addPotionEffect(nightVision); // Potion.byId("water_breathing")
+				// 2 night vision effect
+				StatusEffectInstance nightVision = new StatusEffectInstance(StatusEffect.byRawId(16), 80, 50, true, false);
+				entity.addPotionEffect(nightVision); // Potion.byId("water_breathing")
 
-			// 3 four heart particles rendered where player is facing
-			Vec3d pos = entity.getPos();
-			double x = pos.getX(); // + facing.getOffsetX();
-			double y = pos.getY() + entity.getEyeHeight(entity.getPose());
-			double z = pos.getZ(); // + facing.getOffsetZ();
+				// 3 four heart particles rendered where player is facing
+				Vec3d pos = entity.getPos();
+				double x = pos.getX();
+				double y = pos.getY() + entity.getEyeHeight(entity.getPose());
+				double z = pos.getZ();
 
-			/*
-			Direction facing = entity.getHorizontalFacing();
-			double offset = (facing.getDirection().equals(Direction.AxisDirection.POSITIVE) ? 1 : 0);			if (facing.getAxis().equals(Direction.Axis.X)) {
-				x = x + offset;
-			}	else if (facing.getAxis().equals(Direction.Axis.Y)) {
-				y = y + offset;
-			} else if (facing.getAxis().equals(Direction.Axis.Z)) {
-				z = z + offset;
-			}*/
-
-			WorldRenderer renderer = MinecraftClient.getInstance().worldRenderer;
-			renderer.addParticle(ParticleTypes.HEART, true, true, x + 1, y, z, 0, 2, 0);
-			renderer.addParticle(ParticleTypes.HEART, true, true, x, y, z + 1, 0, 2, 0);
-			renderer.addParticle(ParticleTypes.HEART, true, true, x - 1, y, z, 0, 2, 0);
-			renderer.addParticle(ParticleTypes.HEART, true, true, x, y, z - 1, 0, 2, 0);
-		} catch (Exception e) {
-			System.out.println(String.format("[%s]: onItemFinishedUsing exception: %s", CarrotsMod.MOD_ID, ExceptionUtils.getStackTrace(e)));
+				WorldRenderer renderer = MinecraftClient.getInstance().worldRenderer;
+				renderer.addParticle(ParticleTypes.HEART, true, true, x + 1, y, z, 0, 2, 0);
+				renderer.addParticle(ParticleTypes.HEART, true, true, x, y, z + 1, 0, 2, 0);
+				renderer.addParticle(ParticleTypes.HEART, true, true, x - 1, y, z, 0, 2, 0);
+				renderer.addParticle(ParticleTypes.HEART, true, true, x, y, z - 1, 0, 2, 0);
+			} catch (Exception e) {
+				System.out.println(String.format("[%s]: onItemFinishedUsing exception: %s", CarrotsMod.MOD_ID, ExceptionUtils.getStackTrace(e)));
+			}
 		}
 
 		return super.onItemFinishedUsing(stack, world, entity);
