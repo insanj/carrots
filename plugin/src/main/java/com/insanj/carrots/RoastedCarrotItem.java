@@ -47,6 +47,7 @@ import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.potion.Potion;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.client.network.ClientPlayerEntity;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
@@ -69,7 +70,7 @@ public class RoastedCarrotItem extends Item {
 
 	@Override
 	public ItemStack onItemFinishedUsing(ItemStack stack, World world, LivingEntity entity) {
-		if (!world.isClient) {
+		if (world.isClient) {
 			try {
 				// 1 water breathing effect
 				StatusEffectInstance waterBreathing = new StatusEffectInstance(StatusEffect.byRawId(13), 80, 50, true, false); // time in ticks?
