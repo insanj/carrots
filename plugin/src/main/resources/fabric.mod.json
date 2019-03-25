@@ -1,0 +1,13 @@
+{
+  "id": "carrots",
+  "name": "carrots",
+  "description": "roasted carrots! put normal carrots in a furnace for a much more lovable alternative.",
+  "version": "${version}",
+  "side": "universal",
+  "initializers": [
+    "com.insanj.carrots.CarrotsMod"
+  ],
+  "requires": {
+    "fabric": "*"
+  }
+}
