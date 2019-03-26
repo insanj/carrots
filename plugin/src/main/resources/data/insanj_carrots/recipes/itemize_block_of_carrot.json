@@ -1,0 +1,13 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "insanj_carrots:block_of_carrot",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "minecraft:carrot",
+    "count": 9
+  }
+}

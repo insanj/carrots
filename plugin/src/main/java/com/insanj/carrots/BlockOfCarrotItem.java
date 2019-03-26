@@ -51,11 +51,11 @@ import net.minecraft.client.network.ClientPlayerEntity;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
-public class RoastedCarrotItem extends Item {
-	public static final String ITEM_ID = "roasted_carrot";
-	private static final FoodItemSetting FOOD_SETTING = (new FoodItemSetting.Builder()).hunger(5).saturationModifier(0.6F).eatenFast().build();
+public class BlockOfCarrotItem extends Item {
+	public static final String ITEM_ID = "block_of_carrot";
+	private static final FoodItemSetting FOOD_SETTING = (new FoodItemSetting.Builder()).hunger(18).saturationModifier(1F).eatenFast().build();
 
-	public RoastedCarrotItem() {
+	public BlockOfCarrotItem() {
 		super(new Item.Settings().food(FOOD_SETTING).itemGroup(ItemGroup.FOOD));
 	}
 
@@ -63,7 +63,7 @@ public class RoastedCarrotItem extends Item {
 	public void buildTooltip(ItemStack stack, World world, List<TextComponent> tooltip, TooltipContext options) {
 		CompoundTag tags = stack.getTag();
 
-		TranslatableTextComponent desc = new TranslatableTextComponent("item.insanj_carrots.roasted_carrot.desc");//, new SimpleDateFormat("MM/dd HH:mm").format(new Date()));
+		TranslatableTextComponent desc = new TranslatableTextComponent("item.insanj_carrots.block_of_carrot.desc");
 		desc.setStyle(new Style().setColor(TextFormat.RED));
 		tooltip.add(desc);
 	}
@@ -71,16 +71,7 @@ public class RoastedCarrotItem extends Item {
 	@Override
 	public ItemStack onItemFinishedUsing(ItemStack stack, World world, LivingEntity entity) {
 		try {
-			if (!world.isClient) {
-				// 1 water breathing effect
-				StatusEffectInstance waterBreathing = new StatusEffectInstance(StatusEffect.byRawId(13), 80, 50, true, false);
-				entity.addPotionEffect(waterBreathing);
-
-				// 2 night vision effect
-				StatusEffectInstance nightVision = new StatusEffectInstance(StatusEffect.byRawId(16), 80, 50, true, false);
-				entity.addPotionEffect(nightVision); // Potion.byId("water_breathing")
-			} else {
-				// 3 four heart particles rendered where player is facing
+			if (world.isClient) {
 				Vec3d pos = entity.getPos();
 				double x = pos.getX();
 				double y = pos.getY() + entity.getEyeHeight(entity.getPose());

@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "minecraft:carrot"
   },
-  "result": "carrots:roasted_carrot",
+  "result": "insanj_carrots:roasted_carrot",
   "experience": 0.35,
   "cookingtime": 150
 }
