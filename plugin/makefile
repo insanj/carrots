@@ -8,3 +8,7 @@ all:
 		export JAVA_HOME=$(JAVA_HOME)
 	 ./gradlew build
 #	 ./gradlew clean
+
+.PHONY: maven
+maven:
+		mvn install:install-file -Dfile=yarn\-19w12bj.jar -DgroupId=net.fabricmc -DartifactId=yarn -Dversion=19w12bj -Dpackaging=jar
