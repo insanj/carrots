@@ -11,6 +11,6 @@
     "fabric": "*"
   },
   "mixins": {
-    "common": "insanj_carrots.common.json"
+    "common": "insanj_carrots.common.json",
   }
 }

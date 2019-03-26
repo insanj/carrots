@@ -26,8 +26,12 @@ dependencies {
 processResources {
 	inputs.property "version", project.version
 
+	refMap = "mixins.carrots.refmap.json"
+
+
 	from(sourceSets.main.resources.srcDirs) {
 		include "fabric.mod.json"
+		include "mixins.carrots.refmap.json"
 		expand "version": project.version
 	}
 
@@ -47,6 +51,11 @@ tasks.withType(JavaCompile) {
 // if it is present.
 // If you remove this task, sources will not be generated.
 task sourcesJar(type: Jar, dependsOn: classes) {
+	manifest.attributes(
+			'MixinConfigs': 'mixins.carrots.refmap.json',
+			'FMLCorePluginContainsFMLMod': 'true'
+	)
+
 	classifier = "sources"
 	from sourceSets.main.allSource
 }
@@ -54,6 +63,7 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 jar {
 	from "LICENSE"
 }
+
 
 // configure the maven publication
 publishing {

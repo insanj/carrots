@@ -61,9 +61,4 @@ public class CarrotBowItem extends BowItem {
 	public CarrotBowItem() {
 		super(new BowItem.Settings().itemGroup(ItemGroup.COMBAT));
 	}
-
-	@Override
-	protected boolean method_8007(ItemStack itemStack) {
-    return super.method_8007(itemStack) || (itemStack instanceof CarrotArrowItem);
-  }
 }

@@ -1,9 +1,10 @@
 {
   "required": true,
   "package": "com.insanj.carrots.mixins",
+  "refmap": "mixins.carrots.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinBowItem"
+    "MixinBaseBowItem"
   ],
   "injectors": {
     "defaultRequire": 1
