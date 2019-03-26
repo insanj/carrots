@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.insanj.carrots.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinBowItem"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

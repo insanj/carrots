@@ -32,11 +32,13 @@ public class CarrotsMod implements ModInitializer {
     public static final RoastedCarrotItem ROASTED_CARROT_ITEM = new RoastedCarrotItem();
     public static final BlockOfCarrotItem BLOCK_OF_CARROT_ITEM = new BlockOfCarrotItem();
     public static final CarrotArrowItem CARROT_ARROW_ITEM = new CarrotArrowItem();
+    public static final CarrotBowItem CARROT_BOW_ITEM = new CarrotBowItem();
 
     @Override
     public void onInitialize() {
       Registry.register(Registry.ITEM, new Identifier(MOD_ID, RoastedCarrotItem.ITEM_ID), ROASTED_CARROT_ITEM);
       Registry.register(Registry.ITEM, new Identifier(MOD_ID, BlockOfCarrotItem.ITEM_ID), BLOCK_OF_CARROT_ITEM);
       Registry.register(Registry.ITEM, new Identifier(MOD_ID, CarrotArrowItem.ITEM_ID), CARROT_ARROW_ITEM);
+      Registry.register(Registry.ITEM, new Identifier(MOD_ID, CarrotBowItem.ITEM_ID), CARROT_BOW_ITEM);
     }
 }

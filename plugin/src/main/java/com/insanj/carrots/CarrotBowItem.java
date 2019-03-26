@@ -51,33 +51,19 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.SpectralArrowEntity;
-import net.minecraft.item.SpectralArrowItem;
-import net.minecraft.item.ArrowItem;
+import net.minecraft.item.BowItem;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
-public class CarrotArrowItem extends ArrowItem {
-	public static final String ITEM_ID = "carrot_arrow";
+public class CarrotBowItem extends BowItem {
+	public static final String ITEM_ID = "carrot_bow";
 
-	public CarrotArrowItem() {
-		super(new ArrowItem.Settings().itemGroup(ItemGroup.COMBAT));
+	public CarrotBowItem() {
+		super(new BowItem.Settings().itemGroup(ItemGroup.COMBAT));
 	}
 
 	@Override
-	public ProjectileEntity createEntityArrow(World world, ItemStack stack, LivingEntity livingShooter) {
-		//SpectralArrowEntity entity = new SpectralArrowEntity(world, livingShooter);
-		// entity.setDuration(80);
-		ArrowEntity entity = new ArrowEntity(world, livingShooter);
-		entity.setDamage(-3.0);
-		return entity;
-	}
-
-	@Override
-	public void buildTooltip(ItemStack stack, World world, List<TextComponent> tooltip, TooltipContext options) {
-		CompoundTag tags = stack.getTag();
-
-		TranslatableTextComponent desc = new TranslatableTextComponent("item.insanj_carrots.carrot_arrow.desc");
-		desc.setStyle(new Style().setColor(TextFormat.RED));
-		tooltip.add(desc);
-	}
+	protected boolean method_8007(ItemStack itemStack) {
+    return super.method_8007(itemStack) || (itemStack instanceof CarrotArrowItem);
+  }
 }

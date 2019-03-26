@@ -5,9 +5,12 @@
   "version": "${version}",
   "side": "universal",
   "initializers": [
-    "com.insanj.carrots.CarrotsMod"
+    "com.insanj.carrots.CarrotsMod",
   ],
   "requires": {
     "fabric": "*"
+  },
+  "mixins": {
+    "common": "insanj_carrots.common.json"
   }
 }
