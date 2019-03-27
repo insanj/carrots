@@ -17,18 +17,23 @@ import net.minecraft.item.ArrowItem;
 import net.minecraft.item.Item;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.util.MaterialPredicate;
-
-
+import net.minecraft.text.TextComponent;
 
 @Mixin(ItemPredicate.class)
-public class MixinItemPredicate {
+public class MixinItemPredicate extends ItemPredicate {
  // @Inject(at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/platform/GlStateManager;alphaFunc(IF)V"), method = "render")
 // "Lnet/minecraft/predicate/item/ItemPredicate;test(Lbaz)Z
-  @Inject(method = "test", at = @At("HEAD"), cancellable = false)
-  private void test(ItemStack stack, CallbackInfoReturnable ci) {
-    System.out.println("HELLO WORLD");
+ // @Inject(method = "test", at = @At("HEAD"), cancellable = false)
+
+  @Override
+  public boolean test(ItemStack stack) {//}, CallbackInfoReturnable ci) {
+    //System.out.println(stack.getDisplayName().getText());
     // ci.setReturnValue(true);
-    stack = new ItemStack(new ArrowItem(new ArrowItem.Settings()));
+    if (stack.getDisplayName().getText().equals("Carrot Arrow")) {
+      return true;
+    } else {
+      return super.test(stack);
+    }
   }
 
 /*
