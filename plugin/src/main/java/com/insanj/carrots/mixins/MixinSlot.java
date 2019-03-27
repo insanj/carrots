@@ -17,24 +17,20 @@ import net.minecraft.item.ArrowItem;
 import net.minecraft.item.Item;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.util.MaterialPredicate;
-import net.minecraft.text.TextComponent;
+import net.minecraft.text.TranslatableTextComponent;
+import net.minecraft.container.Slot;
 
-@Mixin(ItemPredicate.class)
-public class MixinItemPredicate extends ItemPredicate {
- // @Inject(at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/platform/GlStateManager;alphaFunc(IF)V"), method = "render")
-// "Lnet/minecraft/predicate/item/ItemPredicate;test(Lbaz)Z
- // @Inject(method = "test", at = @At("HEAD"), cancellable = false)
-/*
-  @Override
-  public boolean test(ItemStack stack) {//}, CallbackInfoReturnable ci) {
-    //System.out.println(stack.getDisplayName().getText());
-    // ci.setReturnValue(true);
-    if (stack.getDisplayName().getText().equals("Carrot Arrow")) {
-      return true;
-    } else {
-      return super.test(stack);
-    }
-  }*/
+@Mixin(Slot.class)
+public class MixinSlot {
+  @Inject(method = "onCrafted", at = @At("HEAD"))
+  public void onCrafted(ItemStack stack, int amount, CallbackInfo ci) {
+    //if (stack.getDisplayName().getText().equals("Carrot Arrow")) {
+    //  return true;
+    //} else {
+    //  return super.test(stack);
+    //}
+    stack.setDisplayName(new TranslatableTextComponent("Carrot Arrow"));
+  }
 
 /*
 @Mixin(BaseBowItem.class)
