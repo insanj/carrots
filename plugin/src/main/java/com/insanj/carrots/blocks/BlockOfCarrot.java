@@ -14,6 +14,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.block.BlockItem;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.text.StringTextComponent;
 import net.minecraft.server.world.ServerWorld;
@@ -48,6 +49,8 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.potion.Potion;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.sortme.ItemScatterer;
+
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
@@ -58,6 +61,13 @@ public class BlockOfCarrot extends Block {
   public static final String ITEM_ID = "block_of_carrot";
 
 	public BlockOfCarrot() {
-    super(FabricBlockSettings.of(Material.PUMPKIN).hardness(1.0f).lightLevel(1).build());
+    super(FabricBlockSettings.of(Material.LEAVES).hardness(0.f).lightLevel(1).build());
 	}
+
+  @Override
+  public void onBreak(World world, BlockPos blockPos, BlockState blockState, PlayerEntity playerEntity) {
+    ItemStack stack = new ItemStack(CarrotsMod.BLOCK_OF_CARROT_ITEM);
+    ItemScatterer.spawn(world, blockPos.getX(), blockPos.getY(), blockPos.getZ(), stack);
+    super.onBreak(world, blockPos, blockState, playerEntity);
+  }
 }
