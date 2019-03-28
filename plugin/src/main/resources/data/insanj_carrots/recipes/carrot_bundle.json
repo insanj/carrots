@@ -1,20 +1,16 @@
 {
   "type": "crafting_shaped",
   "pattern": [
-    " C ",
-    "CBC",
-    " C "
+    "CC",
+    "CC"
   ],
   "key": {
     "C": {
       "item": "minecraft:carrot"
-    },
-    "B": {
-      "item": "minecraft:bow"
     }
   },
   "result": {
-    "item": "insanj_carrots:carrot_bow",
+    "item": "insanj_carrots:carrot_bundle",
     "count": 1
   }
 }

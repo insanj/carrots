@@ -3,7 +3,7 @@
   "package": "com.insanj.carrots.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinSlot"
+    "MixinBaseBowItem"
   ],
   "injectors": {
     "defaultRequire": 1

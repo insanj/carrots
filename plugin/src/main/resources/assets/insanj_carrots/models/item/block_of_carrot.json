@@ -1,6 +1,6 @@
 {
-	"parent": "item/generated",
-	"textures": {
-		"layer0": "insanj_carrots:items/block_of_carrot"
-	}
+  "parent": "insanj_carrots:block/block_of_carrot",
+  "textures": {
+    "layer0": "insanj_carrots:item/block_of_carrot"
+  }
 }

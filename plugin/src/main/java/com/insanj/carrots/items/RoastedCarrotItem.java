@@ -55,7 +55,7 @@ import com.insanj.carrots.CarrotsMod;
 
 public class RoastedCarrotItem extends Item {
 	public static final String ITEM_ID = "roasted_carrot";
-	private static final FoodItemSetting FOOD_SETTING = (new FoodItemSetting.Builder()).hunger(5).saturationModifier(0.6F).eatenFast().build();
+	private static final FoodItemSetting FOOD_SETTING = (new FoodItemSetting.Builder()).hunger(4).saturationModifier(0.6F).eatenFast().build();
 
 	public RoastedCarrotItem() {
 		super(new Item.Settings().food(FOOD_SETTING).itemGroup(ItemGroup.FOOD));

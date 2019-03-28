@@ -1,7 +1,7 @@
 {
   "id": "insanj_carrots",
   "name": "carrots",
-  "description": "roasted carrots! put normal carrots in a furnace for a much more lovable alternative.",
+  "description": "lovely new carrot items that make the game more fun",
   "version": "${version}",
   "side": "universal",
   "initializers": [

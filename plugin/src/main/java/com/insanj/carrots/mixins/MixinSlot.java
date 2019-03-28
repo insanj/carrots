@@ -29,8 +29,27 @@ public class MixinSlot {
     //} else {
     //  return super.test(stack);
     //}
-    stack.setDisplayName(new TranslatableTextComponent("Carrot Arrow"));
+    System.out.println("onCrafted has been called!!!");
+    // stack.setDisplayName(new TranslatableTextComponent("Carrot Arrow"));
   }
+/*
+  @Inject(method = "onTake", at = @At("HEAD"))
+  public void onTake(int amount, CallbackInfo ci) {
+    System.out.println("onTake has been called!!!");
+  //  stack.setDisplayName(new TranslatableTextComponent("Carrot Arrow"));
+  }
+*/
+/*
+  @Inject(method = "getStack ", at = @At("HEAD"))
+  public void getStack(CallbackInfoReturnable ci) {
+    System.out.println("getStack has been called!!!");
+   // stack.setDisplayName(new TranslatableTextComponent("Carrot Arrow"));
+ }*/
+/*
+  @Inject(method = "onStackChanged", at = @At("HEAD"))
+  public void onStackChanged(ItemStack originalItem, ItemStack changedItem, CallbackInfo ci) {
+    System.out.println("onStackChanged has been called!!!");
+  }*/
 
 /*
 @Mixin(BaseBowItem.class)

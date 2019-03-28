@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "insanj_carrots:item/carrot_bow"
+		"layer0": "insanj_carrots:item/carrot_bundle"
 	}
 }

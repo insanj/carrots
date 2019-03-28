@@ -1,4 +1,4 @@
-package com.insanj.carrots.items;
+package com.insanj.carrots.blocks;
 
 import java.util.List;
 import java.util.Date;
@@ -48,47 +48,16 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.potion.Potion;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.fabricmc.fabric.api.block.FabricBlockSettings;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 import com.insanj.carrots.CarrotsMod;
 
-public class BlockOfCarrotItem extends Item {
-	public static final String ITEM_ID = "block_of_carrot";
-	private static final FoodItemSetting FOOD_SETTING = (new FoodItemSetting.Builder()).hunger(18).saturationModifier(1F).eatenFast().build();
+public class BlockOfCarrot extends Block {
+  public static final String ITEM_ID = "block_of_carrot";
 
-	public BlockOfCarrotItem() {
-		super(new Item.Settings().food(FOOD_SETTING).itemGroup(ItemGroup.FOOD));
-	}
-
-	@Override
-	public void buildTooltip(ItemStack stack, World world, List<TextComponent> tooltip, TooltipContext options) {
-		CompoundTag tags = stack.getTag();
-
-		TranslatableTextComponent desc = new TranslatableTextComponent("item.insanj_carrots.block_of_carrot.desc");
-		desc.setStyle(new Style().setColor(TextFormat.RED));
-		tooltip.add(desc);
-	}
-
-	@Override
-	public ItemStack onItemFinishedUsing(ItemStack stack, World world, LivingEntity entity) {
-		try {
-			if (world.isClient) {
-				Vec3d pos = entity.getPos();
-				double x = pos.getX();
-				double y = pos.getY() + entity.getEyeHeight(entity.getPose());
-				double z = pos.getZ();
-
-				WorldRenderer renderer = MinecraftClient.getInstance().worldRenderer;
-				renderer.addParticle(ParticleTypes.HEART, true, true, x + 1, y, z, 0, 2, 0);
-				renderer.addParticle(ParticleTypes.HEART, true, true, x, y, z + 1, 0, 2, 0);
-				renderer.addParticle(ParticleTypes.HEART, true, true, x - 1, y, z, 0, 2, 0);
-				renderer.addParticle(ParticleTypes.HEART, true, true, x, y, z - 1, 0, 2, 0);
-			}
-		} catch (Exception e) {
-			System.out.println(String.format("[%s]: onItemFinishedUsing exception: %s", CarrotsMod.MOD_ID, ExceptionUtils.getStackTrace(e)));
-		}
-
-		return super.onItemFinishedUsing(stack, world, entity);
+	public BlockOfCarrot() {
+    super(FabricBlockSettings.of(Material.PUMPKIN).hardness(1.0f).lightLevel(1).build());
 	}
 }

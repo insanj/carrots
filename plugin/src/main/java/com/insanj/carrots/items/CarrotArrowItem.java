@@ -65,9 +65,8 @@ public class CarrotArrowItem extends ArrowItem {
 
 	@Override
 	public ProjectileEntity createEntityArrow(World world, ItemStack stack, LivingEntity livingShooter) {
-		//SpectralArrowEntity entity = new SpectralArrowEntity(world, livingShooter);
-		// entity.setDuration(80);
-		ArrowEntity entity = new ArrowEntity(world, livingShooter);
+		SpectralArrowEntity entity = new SpectralArrowEntity(world, livingShooter);
+		//ArrowEntity entity = new ArrowEntity(world, livingShooter);
 		entity.setDamage(-3.0);
 		return entity;
 	}
