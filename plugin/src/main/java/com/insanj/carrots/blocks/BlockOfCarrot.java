@@ -50,6 +50,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.sortme.ItemScatterer;
+import net.minecraft.sound.BlockSoundGroup;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 
@@ -61,7 +62,7 @@ public class BlockOfCarrot extends Block {
   public static final String ITEM_ID = "block_of_carrot";
 
 	public BlockOfCarrot() {
-    super(FabricBlockSettings.of(Material.LEAVES).hardness(0.f).lightLevel(1).build());
+    super(FabricBlockSettings.of(Material.PUMPKIN).sounds(BlockSoundGroup.CROP).hardness(1.0f).lightLevel(1).build());
 	}
 
   @Override
