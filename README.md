@@ -16,6 +16,7 @@ Built for 1.14, 1.14.1, and 1.14.2 (up to Pre-Release 1)
 - **Magenta Carrot Bundle**: Dye the Carrot Bundle with magenta dye.
 - **Roasted Carrots**: Use a furnace to smelt an excellent new food that provides status effects.
 
+<br/>
 
 <p align="center">
 <img src="https://i.imgur.com/Ol1Tcf8.png" width=200>
