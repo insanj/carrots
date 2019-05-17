@@ -4,6 +4,7 @@
   "version": "${version}",
 
   "name": "carrots",
+  "icon": "assets/carrots/icon.png",
   "description": "carrot bundles & roasted carrots. lovely new food items that make the game more fun",
   "authors": [
     {

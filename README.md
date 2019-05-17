@@ -1,6 +1,10 @@
+<img src="https://user-images.githubusercontent.com/951011/57900620-8e6fd300-782f-11e9-8e28-91b0490f2739.png" width=200>
+
 # carrots
 
 🥕 carrot bundles & roasted carrots. lovely new food items that make the game more fun
+
+<br/>
 
 ---
 
@@ -10,11 +14,13 @@ Built for 1.14, 1.14.1, and 1.14.2 (up to Pre-Release 1)
 
 ---
 
+<br/>
+
 ## Features
 
-- **Carrot Bundle**: Craft a new food item with 3 carrots and 1 string. You can only feed this to other entities, but not yourself!
-- **Magenta Carrot Bundle**: Dye the Carrot Bundle with magenta dye.
-- **Roasted Carrots**: Use a furnace to smelt an excellent new food that provides status effects.
+- **Carrot Bundle**: Craft a new food item with 3 carrots and 1 string. You can only feed this to other players!
+- **Magenta Carrot Bundle**: Dye the Carrot Bundle with magenta dye. More coming soon!
+- **Roasted Carrots**: Smelt an excellent new food from Carrot Bundles that provides bonus status effects.
 
 <br/>
 
@@ -22,6 +28,7 @@ Built for 1.14, 1.14.1, and 1.14.2 (up to Pre-Release 1)
 <img src="https://i.imgur.com/Ol1Tcf8.png" width=200>
 </p>
 
+<br/>
 
 ## License
 
