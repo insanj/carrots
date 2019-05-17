@@ -12,7 +12,7 @@
 
 ## Features
 
-- **Carrot Bundle**: Craft a new food item with 3 carrots and 1 string. You can only feed this to other players!
+- **Carrot Bundle**: Craft a new food item with 4 carrots and 1 string. You can only feed this to other players!
 - **Magenta Carrot Bundle**: Dye the Carrot Bundle with magenta dye. More coming soon!
 - **Roasted Carrots**: Smelt an excellent new food from Carrot Bundles that provides bonus status effects.
 
