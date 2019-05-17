@@ -64,19 +64,37 @@ public class CarrotBundleItem extends Item {
 	private static final FoodItemSetting FOOD_SETTING = (new FoodItemSetting.Builder()).build();
 
 	public CarrotBundleItem() {
-		super(new Item.Settings().food(FOOD_SETTING).itemGroup(ItemGroup.FOOD));
+		super(new Item.Settings().itemGroup(ItemGroup.FOOD));
 	}
 
 	@Override
 	public boolean interactWithEntity(ItemStack stack, PlayerEntity player, LivingEntity target, Hand hand) {
-		World world = player.getEntityWorld();
-		if (world.getServer() == null) {
-			System.out.println("not doing anything cause server");
+		if (!(target instanceof PlayerEntity)) {
+			System.out.println("not doing anything cause not player");
 			return false;
 		}
 
-		if (!(target instanceof PlayerEntity)) {
-			return false;
+		World world = player.getEntityWorld();
+		BlockPos pos = target.getBlockPos();
+
+		if (world.getServer() == null) {
+			System.out.println("doing effects");
+
+			try {
+				double x = pos.getX();
+				double y = pos.getY() + 1;
+				double z = pos.getZ();
+
+				WorldRenderer renderer = MinecraftClient.getInstance().worldRenderer;
+				renderer.addParticle(ParticleTypes.HEART, true, true, x + 1, y, z, 0, 2, 0);
+				renderer.addParticle(ParticleTypes.HEART, true, true, x, y, z + 1, 0, 2, 0);
+				renderer.addParticle(ParticleTypes.HEART, true, true, x - 1, y, z, 0, 2, 0);
+				renderer.addParticle(ParticleTypes.HEART, true, true, x, y, z - 1, 0, 2, 0);
+			} catch (Exception e) {
+				System.out.println(String.format("[%s]: interactWithEntity exception: %s", CarrotsMod.MOD_ID, ExceptionUtils.getStackTrace(e)));
+			}
+
+			return true;
 		}
 
 		PlayerEntity targetPlayer = (PlayerEntity)target;
@@ -84,7 +102,6 @@ public class CarrotBundleItem extends Item {
 		System.out.println("feeding time");
 
     stack.subtractAmount(1);
-
     player.swingHand(hand);
     player.addExhaustion(1.0F);
 
@@ -93,11 +110,22 @@ public class CarrotBundleItem extends Item {
     // hungerManager.setSaturationLevelClient(hungerManager.getSaturationLevel());
     hungerManager.add(4, 0.6F);
 
-    BlockPos pos = target.getBlockPos();
     world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 1.0F, 1.0F);
 
 		return true;
 	}
+
+/*
+	@Override
+	public ItemStack onItemFinishedUsing(ItemStack stack, World world, LivingEntity entity) {
+		if (!world.isClient) {
+			return super.onItemFinishedUsing(stack, world, entity);
+		}
+
+
+		return super.onItemFinishedUsing(stack, world, entity);
+	}
+*/
 
 	@Override
 	public void buildTooltip(ItemStack stack, World world, List<TextComponent> tooltip, TooltipContext options) {
