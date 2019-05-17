@@ -4,7 +4,8 @@
   "version": "${version}",
 
   "name": "carrots",
-  "description": "carrot bundles & roasted carrots. lovely new food items that make the game more fun",
+  "icon": "assets/carrots/icon.png",
+  "description": "carrot bundles & roasted carrots. lovely bonus food items!",
   "authors": [
     {
      "name": "Julian (insanj) Weiss",
