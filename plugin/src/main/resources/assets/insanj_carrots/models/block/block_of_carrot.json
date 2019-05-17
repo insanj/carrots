@@ -1,8 +1,0 @@
-{
-	"parent": "block/cube_bottom_top",
-	"textures": {
-		"bottom": "insanj_carrots:block/block_of_carrot_bottom",
-		"top": "insanj_carrots:block/block_of_carrot_top",
-		"side": "insanj_carrots:block/block_of_carrot_side"
-	}
-}

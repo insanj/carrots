@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "carrots",
+  "version": "${version}",
+
+  "name": "carrots",
+  "description": "carrot bundles & roasted carrots. lovely new food items that make the game more fun",
+  "authors": [
+    {
+     "name": "Julian (insanj) Weiss",
+      "contact": {
+        "email": "me@insanj.com",
+        "homepage": "https://insanj.github.io/carrots/",
+        "issues": "https://github.com/insanj/carrots/issues",
+        "sources": "https://github.com/insanj/carrots/"
+      }
+    }
+  ],
+
+  "license": "MIT",
+  "contact": {
+    "email": "me@insanj.com",
+    "homepage": "https://insanj.github.io/carrots/",
+    "issues": "https://github.com/insanj/carrots/issues",
+    "sources": "https://github.com/insanj/carrots/"
+  },
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.insanj.carrots.CarrotsMod"
+    ]
+  },
+
+  "requires" : {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*"
+  },
+  "depends": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*"
+  }
+}

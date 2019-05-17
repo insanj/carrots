@@ -1,9 +1,0 @@
-{
-  "type": "smelting",
-  "ingredient": {
-    "item": "minecraft:carrot"
-  },
-  "result": "insanj_carrots:roasted_carrot",
-  "experience": 0.35,
-  "cookingtime": 250
-}

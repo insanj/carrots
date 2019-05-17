@@ -1,0 +1,19 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    " S ",
+    "CCC"
+  ],
+  "key": {
+   "C": {
+      "item": "minecraft:string"
+    },
+    "C": {
+      "item": "minecraft:carrot"
+    }
+  },
+  "result": {
+    "item": "carrots:carrot_bundle",
+    "count": 1
+  }
+}
