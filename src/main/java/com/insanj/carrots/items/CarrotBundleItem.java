@@ -9,13 +9,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.FoodItemSetting;
-import net.minecraft.item.FoodItemSettings;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.text.Style;
-import net.minecraft.text.TextComponent;
-import net.minecraft.text.TextFormat;
-import net.minecraft.text.TranslatableTextComponent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Style;
+import net.minecraft.ChatFormat;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -25,7 +25,6 @@ import com.insanj.carrots.util.CarrotsParticleUtil;
 
 public class CarrotBundleItem extends Item {
   public static final String ITEM_ID = "carrot_bundle";
-  private static final FoodItemSetting FOOD_SETTING = (new FoodItemSetting.Builder()).build();
 
   public CarrotBundleItem() {
     super(new Item.Settings().itemGroup(ItemGroup.FOOD));
@@ -61,9 +60,9 @@ public class CarrotBundleItem extends Item {
   }
 
   @Override
-  public void buildTooltip(ItemStack stack, World world, List<TextComponent> tooltip, TooltipContext options) {
-    TranslatableTextComponent desc = new TranslatableTextComponent("item.carrots.carrot_bundle.tooltip");
-    desc.setStyle(new Style().setColor(TextFormat.RED));
+  public void buildTooltip(ItemStack stack, World world, List<Component> tooltip, TooltipContext options) {
+    TranslatableComponent desc = new TranslatableComponent("item.carrots.carrot_bundle.tooltip");
+    desc.setStyle(new Style().setColor(ChatFormat.RED));
     tooltip.add(desc);
   }
 }

@@ -7,7 +7,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.FoodItemSetting;
-import net.minecraft.item.FoodItemSettings;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -16,10 +15,10 @@ import com.insanj.carrots.util.CarrotsParticleUtil;
 
 public class RoastedCarrotsItem extends Item {
 	public static final String ITEM_ID = "roasted_carrots";
-	private static final FoodItemSetting FOOD_SETTING = (new FoodItemSetting.Builder()).hunger(6).saturationModifier(0.6F).eatenFast().build();
+	public static final FoodItemSetting FOOD_SETTINGS = (new FoodItemSetting.Builder()).hunger(6).saturationModifier(0.6F).eatenFast().build();
 
 	public RoastedCarrotsItem() {
-		super(new Item.Settings().food(FOOD_SETTING).itemGroup(ItemGroup.FOOD));
+		super(new Item.Settings().food(FOOD_SETTINGS).itemGroup(ItemGroup.FOOD));
 	}
 
 	@Override
