@@ -9,6 +9,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import com.insanj.carrots.CarrotsMod;
 
 public class CarrotsParticleUtil {
+  // convenience function to produce heart particle effect (like when feeding animals)
   public static void heart(Vec3d pos) {
     try {
       double x = pos.getX(), y = pos.getY(), z = pos.getZ();

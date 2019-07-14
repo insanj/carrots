@@ -19,12 +19,14 @@ public class CarrotsMod implements ModInitializer {
 
   @Override
   public void onInitialize() {
-    Registry.register(Registry.ITEM, new Identifier(MOD_ID, CarrotBundleItem.ITEM_ID), CARROT_BUNDLE_ITEM);
+    // register base items; roasted carrots & undyed carrot bundle
     Registry.register(Registry.ITEM, new Identifier(MOD_ID, RoastedCarrotsItem.ITEM_ID), ROASTED_CARROTS_ITEM);
+    Registry.register(Registry.ITEM, new Identifier(MOD_ID, CarrotBundleItem.ITEM_ID), CARROT_BUNDLE_ITEM);
 
+    // register legacy magenta carrot item (for now)
     Registry.register(Registry.ITEM, new Identifier(MOD_ID, LegacyMagentaCarrotBundleItem.ITEM_ID), LEGACY_MAGENTA_CARROT_BUNDLE_ITEM);
 
+    // register all the colors of the rainbow!
     Registry.register(Registry.ITEM, new Identifier(MOD_ID, CarrotBundleMagentaItem.ITEM_ID), CARROT_BUNDLE_MAGENTA_ITEM);
-
   }
 }

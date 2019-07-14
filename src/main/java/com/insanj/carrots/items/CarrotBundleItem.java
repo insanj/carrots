@@ -32,6 +32,7 @@ public class CarrotBundleItem extends Item {
 
   @Override
   public boolean interactWithEntity(ItemStack stack, PlayerEntity player, LivingEntity target, Hand hand) {
+    // when right-clicking player with carrot bundle in had, feed the targeted entity & consume this item
     if (!(target instanceof PlayerEntity)) { // not interacting with player
       return false;
     }
@@ -61,6 +62,7 @@ public class CarrotBundleItem extends Item {
 
   @Override
   public void buildTooltip(ItemStack stack, World world, List<Component> tooltip, TooltipContext options) {
+    // custom tooltip / description for item
     TranslatableComponent desc = new TranslatableComponent("item.carrots.carrot_bundle.tooltip");
     desc.setStyle(new Style().setColor(ChatFormat.RED));
     tooltip.add(desc);
