@@ -15,7 +15,7 @@ public class CarrotsParticleUtil {
       WorldRenderer renderer = MinecraftClient.getInstance().worldRenderer;
       renderer.addParticle(ParticleTypes.HEART, true, true, x, y, z, 0, 2, 0);
     } catch (Exception e) {
-      CarrotsMod.LOGGER.info(String.format("[%s]: interactWithEntity exception: %s", CarrotsMod.MOD_ID, ExceptionUtils.getStackTrace(e)));
+      CarrotsMod.LOGGER.info(String.format("[%s]: addParticle heart exception: %s", CarrotsMod.MOD_ID, ExceptionUtils.getStackTrace(e)));
     }
   }
 
