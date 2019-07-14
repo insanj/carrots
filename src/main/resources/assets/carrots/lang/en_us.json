@@ -1,7 +1,20 @@
 {
   "item.carrots.carrot_bundle":"Carrot Bundle",
   "item.carrots.carrot_bundle.tooltip":"Share the love! <3",
+  "item.carrots.roasted_carrots":"Roasted Carrot",
   "item.carrots.magenta_carrot_bundle":"Magenta Carrot Bundle",
-  "item.carrots.carrot_bundle_magenta":"Magenta Carrot Bundle",
-  "item.carrots.roasted_carrots":"Roasted Carrot"
+  "item.carrots.carrot_bundle_black":"Black Carrot Bundle",
+  "item.carrots.carrot_bundle_blue":"Blue Carrot Bundle",
+  "item.carrots.carrot_bundle_brown":"Brown Carrot Bundle",
+  "item.carrots.carrot_bundle_cyan":"Cyan Carrot Bundle",
+  "item.carrots.carrot_bundle_gray":"Gray Carrot Bundle",
+  "item.carrots.carrot_bundle_green":"Green Carrot Bundle",
+  "item.carrots.carrot_bundle_light_blue":"Light Blue Carrot Bundle",
+  "item.carrots.carrot_bundle_light_gray":"Light Gray Carrot Bundle",
+  "item.carrots.carrot_bundle_lime":"Lime Carrot Bundle",
+  "item.carrots.carrot_bundle_orange":"Orange Carrot Bundle",
+  "item.carrots.carrot_bundle_pink":"Pink Carrot Bundle",
+  "item.carrots.carrot_bundle_purple":"Purple Carrot Bundle",
+  "item.carrots.carrot_bundle_red":"Red Carrot Bundle",
+  "item.carrots.carrot_bundle_yellow":"Yellow Carrot Bundle"
 }

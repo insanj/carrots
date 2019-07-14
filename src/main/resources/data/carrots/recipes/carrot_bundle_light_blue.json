@@ -6,12 +6,12 @@
       "count": 1
     },
     {
-      "item": "minecraft:magenta_dye",
+      "item": "minecraft:light_blue_dye",
       "count": 1
     }
   ],
   "result": {
-    "item": "carrots:magenta_carrot_bundle",
+    "item": "carrots:carrot_bundle_light_blue",
     "count": 1
   }
 }

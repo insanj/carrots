@@ -1,7 +1,7 @@
 {
   "type": "smelting",
   "ingredient": {
-      "item": "carrots:magenta_carrot_bundle"
+      "item": "carrots:carrot_bundle_light_blue"
   },
   "result": "carrots:roasted_carrots",
   "experience": 0.35,
