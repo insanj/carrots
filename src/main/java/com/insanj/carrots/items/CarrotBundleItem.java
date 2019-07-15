@@ -8,14 +8,12 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.FoodItemSetting;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.network.chat.Style;
-import net.minecraft.ChatFormat;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Style;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -27,11 +25,11 @@ public class CarrotBundleItem extends Item {
   public static final String ITEM_ID = "carrot_bundle";
 
   public CarrotBundleItem() {
-    super(new Item.Settings().itemGroup(ItemGroup.FOOD));
+    super(new Item.Settings().group(ItemGroup.FOOD));
   }
 
   @Override
-  public boolean interactWithEntity(ItemStack stack, PlayerEntity player, LivingEntity target, Hand hand) {
+  public boolean useOnEntity(ItemStack stack, PlayerEntity player, LivingEntity target, Hand hand) {
     // when right-clicking player with carrot bundle in had, feed the targeted entity & consume this item
     if (!(target instanceof PlayerEntity)) { // not interacting with player
       return false;
@@ -50,7 +48,7 @@ public class CarrotBundleItem extends Item {
       return true;
     }
 
-    stack.subtractAmount(1);
+    stack.decrement(1);
     player.swingHand(hand);
     player.addExhaustion(1.0F);
     hungerManager.add(6, 0.6F);
@@ -61,10 +59,10 @@ public class CarrotBundleItem extends Item {
   }
 
   @Override
-  public void buildTooltip(ItemStack stack, World world, List<Component> tooltip, TooltipContext options) {
+  public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext options) {
     // custom tooltip / description for item
-    TranslatableComponent desc = new TranslatableComponent("item.carrots.carrot_bundle.tooltip");
-    desc.setStyle(new Style().setColor(ChatFormat.RED));
+    TranslatableText desc = new TranslatableText("item.carrots.carrot_bundle.tooltip");
+    desc.setStyle(new Style().setColor(Formatting.RED));
     tooltip.add(desc);
   }
 }

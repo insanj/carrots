@@ -6,7 +6,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.FoodItemSetting;
+import net.minecraft.item.FoodComponent;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -15,14 +15,14 @@ import com.insanj.carrots.util.CarrotsParticleUtil;
 
 public class RoastedCarrotsItem extends Item {
   public static final String ITEM_ID = "roasted_carrots";
-  public static final FoodItemSetting FOOD_SETTINGS = (new FoodItemSetting.Builder()).hunger(6).saturationModifier(0.6F).eatenFast().build();
+  public static final FoodComponent FOOD_COMPONENT = (new FoodComponent.Builder()).hunger(6).saturationModifier(0.6F).snack().build();
 
   public RoastedCarrotsItem() {
-    super(new Item.Settings().food(FOOD_SETTINGS).itemGroup(ItemGroup.FOOD));
+    super(new Item.Settings().food(FOOD_COMPONENT).group(ItemGroup.FOOD));
   }
 
   @Override
-  public ItemStack onItemFinishedUsing(ItemStack stack, World world, LivingEntity entity) {
+  public ItemStack finishUsing(ItemStack stack, World world, LivingEntity entity) {
     // if server-side, produce status effects, else, produce heart effects
     if (!world.isClient) {
       // 1 water breathing effect
@@ -43,6 +43,6 @@ public class RoastedCarrotsItem extends Item {
       CarrotsParticleUtil.heart(pos.add(0, upOffset, -1));
     }
 
-    return super.onItemFinishedUsing(stack, world, entity);
+    return super.finishUsing(stack, world, entity);
   }
 }
