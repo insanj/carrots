@@ -2,10 +2,10 @@
 
 # carrots
 
-🥕 carrot bundles & roasted carrots. lovely bonus food items!
+🥕 multicolor carrot bundles to feed your friends & roasted carrots with special effects!
 
 <p align="center">
-<b>Built for 1.14, 1.14.1, 1.14.2, 1.14.3, and 1.14.4 (Pre-Release 5)</b>
+<b>Builds available for 1.14, 1.14.1, 1.14.2, and 1.14.3</b>
 </p>
 
 <br/>
