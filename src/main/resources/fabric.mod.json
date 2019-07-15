@@ -5,7 +5,7 @@
 
   "name": "carrots",
   "icon": "assets/carrots/icon.png",
-  "description": "carrot bundles & roasted carrots. lovely bonus food items!",
+  "description": "multicolor carrot bundles to feed your friends & roasted carrots with special effects! builds available for 1.14, 1.14.1, 1.14.2, and 1.14.3",
   "authors": [
     {
      "name": "Julian (insanj) Weiss",
@@ -32,11 +32,9 @@
       "com.insanj.carrots.CarrotsMod"
     ]
   },
+  "mixins": [
+  ],
 
-  "requires" : {
-    "fabricloader": ">=0.4.0",
-    "fabric": "*"
-  },
   "depends": {
     "fabricloader": ">=0.4.0",
     "fabric": "*"

@@ -1,9 +1,0 @@
-{
-  "type": "smelting",
-  "ingredient": {
-    "item": "carrots:magenta_carrot_bundle"
-  },
-  "result": "carrots:roasted_carrots",
-  "experience": 0.35,
-  "cookingtime": 250
-}

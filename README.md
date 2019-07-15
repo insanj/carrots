@@ -2,19 +2,19 @@
 
 # carrots
 
-🥕 carrot bundles & roasted carrots. lovely bonus food items!
+🥕 multicolor carrot bundles to feed your friends & roasted carrots with special effects!
 
 <p align="center">
-<b>Built for 1.14, 1.14.1, and 1.14.2 (up to Pre-Release 1)</b>
+<b>Builds available for 1.14, 1.14.1, 1.14.2, and 1.14.3</b>
 </p>
 
 <br/>
 
 ## Features
 
-- **Carrot Bundle**: Craft a new food item with 4 carrots and 1 string. You can only feed this to other players!
-- **Magenta Carrot Bundle**: Dye the Carrot Bundle with magenta dye. More coming soon!
 - **Roasted Carrots**: Smelt an excellent new food from Carrot Bundles that provides bonus status effects.
+- **Carrot Bundle**: Craft a new food item with 4 carrots and 1 string. You can only feed this to other players!
+- **Multicolor Carrot Bundles**: Combine a Carrot Bundle with any dye. Experience the carrot rainbow!
 
 <br/><br/>
 

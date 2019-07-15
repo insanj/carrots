@@ -1,0 +1,17 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "carrots:carrot_bundle",
+      "count": 1
+    },
+    {
+      "item": "minecraft:purple_dye",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "carrots:carrot_bundle_purple",
+    "count": 1
+  }
+}

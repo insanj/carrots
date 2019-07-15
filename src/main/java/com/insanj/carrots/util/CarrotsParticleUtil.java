@@ -9,13 +9,14 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import com.insanj.carrots.CarrotsMod;
 
 public class CarrotsParticleUtil {
+  // convenience function to produce heart particle effect (like when feeding animals)
   public static void heart(Vec3d pos) {
     try {
       double x = pos.getX(), y = pos.getY(), z = pos.getZ();
       WorldRenderer renderer = MinecraftClient.getInstance().worldRenderer;
       renderer.addParticle(ParticleTypes.HEART, true, true, x, y, z, 0, 2, 0);
     } catch (Exception e) {
-      CarrotsMod.LOGGER.info(String.format("[%s]: interactWithEntity exception: %s", CarrotsMod.MOD_ID, ExceptionUtils.getStackTrace(e)));
+      CarrotsMod.LOGGER.info(String.format("[%s]: addParticle heart exception: %s", CarrotsMod.MOD_ID, ExceptionUtils.getStackTrace(e)));
     }
   }
 

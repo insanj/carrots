@@ -1,6 +1,20 @@
 {
   "item.carrots.carrot_bundle":"胡萝卜捆",
   "item.carrots.carrot_bundle.tooltip":"分享爱! <3",
+  "item.carrots.roasted_carrots":"烤胡萝卜",
   "item.carrots.magenta_carrot_bundle":"品红胡萝卜捆",
-  "item.carrots.roasted_carrots":"烤胡萝卜"
+  "item.carrots.carrot_bundle_black":"黑色胡萝卜捆",
+  "item.carrots.carrot_bundle_blue":"蓝色胡萝卜捆",
+  "item.carrots.carrot_bundle_brown":"棕色胡萝卜捆",
+  "item.carrots.carrot_bundle_cyan":"青色胡萝卜捆",
+  "item.carrots.carrot_bundle_gray":"灰色胡萝卜捆",
+  "item.carrots.carrot_bundle_green":"绿色胡萝卜捆",
+  "item.carrots.carrot_bundle_light_blue":"浅蓝胡萝卜捆",
+  "item.carrots.carrot_bundle_light_gray":"浅灰胡萝卜捆",
+  "item.carrots.carrot_bundle_lime":"酸橙胡萝卜捆",
+  "item.carrots.carrot_bundle_orange":"橙子胡萝卜捆",
+  "item.carrots.carrot_bundle_pink":"粉胡萝卜捆",
+  "item.carrots.carrot_bundle_purple":"紫色胡萝卜捆",
+  "item.carrots.carrot_bundle_red":"红色胡萝卜捆",
+  "item.carrots.carrot_bundle_yellow":"黄色胡萝卜捆"
 }
