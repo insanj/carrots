@@ -18,7 +18,7 @@ public class RoastedCarrotsItem extends Item {
   public static final FoodComponent FOOD_COMPONENT = (new FoodComponent.Builder()).hunger(6).saturationModifier(0.6F).snack().build();
 
   public RoastedCarrotsItem() {
-    super(new Item.Settings().food(FOOD_COMPONENT).group(ItemGroup.FOOD));
+    super(new Item.Settings().food(FOOD_COMPONENT).group(CarrotsMod.ITEM_GROUP));
   }
 
   @Override

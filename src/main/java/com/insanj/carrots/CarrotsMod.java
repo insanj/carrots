@@ -1,8 +1,12 @@
 package com.insanj.carrots;
 
+import net.minecraft.item.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.insanj.carrots.items.*;
@@ -11,9 +15,13 @@ public class CarrotsMod implements ModInitializer {
   public static final String MOD_ID = "carrots";
   public static final Logger LOGGER = LogManager.getLogger("carrots");
 
-  public static final CarrotBundleItem CARROT_BUNDLE_ITEM = new CarrotBundleItem();
-  public static final RoastedCarrotsItem ROASTED_CARROTS_ITEM = new RoastedCarrotsItem();
+  // custom item group (instead of the default ItemGroup.FOOD)
+  public static final Identifier ITEM_GROUP_ID = new Identifier(MOD_ID, "general");
+  public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(ITEM_GROUP_ID, () -> new ItemStack(Items.CARROT));
 
+  // create static refs to each custom item, these will be used to build stacks & register globally
+  public static final RoastedCarrotsItem ROASTED_CARROTS_ITEM = new RoastedCarrotsItem();
+  public static final CarrotBundleItem CARROT_BUNDLE_ITEM = new CarrotBundleItem();
   public static final CarrotBundleMagentaItem CARROT_BUNDLE_MAGENTA_ITEM = new CarrotBundleMagentaItem();
   public static final CarrotBundleBlackItem CARROT_BUNDLE_BLACK_ITEM = new CarrotBundleBlackItem();
   public static final CarrotBundleBlueItem CARROT_BUNDLE_BLUE_ITEM = new CarrotBundleBlueItem();

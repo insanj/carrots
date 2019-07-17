@@ -25,7 +25,7 @@ public class CarrotBundleItem extends Item {
   public static final String ITEM_ID = "carrot_bundle";
 
   public CarrotBundleItem() {
-    super(new Item.Settings().group(ItemGroup.FOOD));
+    super(new Item.Settings().group(CarrotsMod.ITEM_GROUP));
   }
 
   @Override
